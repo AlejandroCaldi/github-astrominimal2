@@ -10,6 +10,11 @@ const identidad= {
 
 const conocimientos = ['Python','Java','SQL']
 
+const sistemaOperativo = 'Linux';
+const cantidad = 4;
+const ropa = 'botas';
+const estudiar = false;
+
 ---
 
 
@@ -43,6 +48,18 @@ const conocimientos = ['Python','Java','SQL']
   {identidad.hobbie.length <= 10 ? <p> No son demasiados hobbies</p> : <p> Este tipo tiene algún defecto de ansiedad</p>}
   <!-- Esta es la forma de llevar un if en astro. "?" es el inicio de la 
        ejecución d código y ":" es el else   -->
+
+<h2> Resultados de ejercicios</h2>
+
+    <p> {sistemaOperativo}</p>
+
+    {estudiar && <p>Sigo estudiando </p>}
+      
+    <p> Tengo {cantidad - 2} pares de {ropa} </p>
+
+    {sistemaOperativo == "Macos" ? <p>Uso el ordenador de la manzanita </p> 
+                                 : <p>No sé como manejar mi OS</p>}
+
   </main>
 </body>
 </html>
