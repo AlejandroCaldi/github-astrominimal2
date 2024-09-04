@@ -1,18 +1,19 @@
 ---
 interface Props {
-    vinculos: string[],
-    color: string;
+    vinculos: string[]
 }
 
-const { vinculos} = Astro.props;
+const {vinculos} = Astro.props;
 ---
 
 
 <footer class="oscuro">
     <p>Suscribios a nuestros feeds:</p>
-    <a href={vinculos[0]} target="_blank" rel="noopener">TechCrunch RSS</a>
-    <a href={vinculos[1]} target="_blank" rel="noopener">BBC RSS</a>
-    <a href={vinculos[2]} target="_blank" rel="noopener">NPR RSS</a>
+
+    {vinculos.map(item => (
+        <li><a href={item[0]} target="_blank" rel="noopener"> {item[1]} </a> </li>
+      ))}
+
 </footer>
 <style>
 
