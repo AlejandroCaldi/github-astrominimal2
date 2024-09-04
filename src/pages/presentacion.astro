@@ -2,6 +2,7 @@
 
 import '../styles/golbal.css'
 import Navegacion from '../components/Navegacion.astro'
+import Footer from '../components/Footer.astro';
 
 
 const pagetitle = "Astro by Alejandro"
@@ -25,6 +26,12 @@ const objetivo = 2;
 const conocimientoColor = 'yellow';
 const tamañoFuente='3rem';
 const grosorFuente='bolder';
+
+const vinculos=["https://techcrunch.com/feed/",
+                "http://feeds.bbci.co.uk/news/world/rss.xml",
+                "https://www.npr.org/rss/podcast.php?"]
+
+const fondo = "darkgrey";
 ---
 
 ---
@@ -74,6 +81,7 @@ const grosorFuente='bolder';
                                  : <p>No sé como manejar mi OS</p>}
 
   </main>
+  <Footer vinculos{vinculos}/>
 </body>
 <style define:vars={{conocimientoColor, tamañoFuente, grosorFuente}}>
   h1{

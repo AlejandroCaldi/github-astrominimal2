@@ -1,0 +1,23 @@
+---
+interface Props {
+    vinculos: string[],
+    color: string;
+}
+
+const { vinculos} = Astro.props;
+---
+
+
+<footer class="oscuro">
+    <p>Suscribios a nuestros feeds:</p>
+    <a href={vinculos[0]} target="_blank" rel="noopener">TechCrunch RSS</a>
+    <a href={vinculos[1]} target="_blank" rel="noopener">BBC RSS</a>
+    <a href={vinculos[2]} target="_blank" rel="noopener">NPR RSS</a>
+</footer>
+<style>
+
+.oscuro{
+    background-color: darkgrey;
+}
+
+</style>
