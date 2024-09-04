@@ -3,9 +3,9 @@ const pagetitle = "Astro by Alejandro"
 
 const identidad= {
   nombre: "Alejandro",
-  apellido: "caldi"
+  apellido: "Caldi",
   pais: "Argentina",
-  hobbir: ["Akedrez","Fotogtafía","Literatura","Programación"]
+  hobbie: ["Akedrez","Fotogtafía","Literatura","Programación"]
 }
 
 const conocimientos = ['Python','Java','SQL']
@@ -15,25 +15,28 @@ const conocimientos = ['Python','Java','SQL']
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
   <title>{pagetitle}</title>
 </head>
 <body>
   <main>
   <h1> Soy... </h1>
     <ul>
-      <li><!-- Nombre y Apellido --></li>
-      <li><!-- Nacipnalidad --></li>
-      <li><!-- Algún detalle --></li>
-      <ol>
-        <li>> Pasatiempos favoritos </ol>    
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+      <li>Nombre y Apellido: {identidad.nombre} {identidad.apellido}</li>
+      <li> País: {identidad.pais}</li>
+      <ol>  Pasatiempos favoritos    
+       {identidad.hobbie.length >= 2 && <li> son... {identidad.hobbie[0]} y {identidad.hobbie[1]}</li>}
         </ol>
+
+      <ol>
+          {identidad.hobbie.map(item => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </ol>
   </ul>
   <h2> ... y esto es todo... </h2>
   </main>
