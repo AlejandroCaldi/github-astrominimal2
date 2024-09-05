@@ -3,6 +3,7 @@
 import '../styles/golbal.css'
 import Navegacion from '../components/Navegacion.astro'
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
 
 const pagetitle = "Astro by Alejandro"
@@ -31,10 +32,15 @@ const vinculos=[["https://techcrunch.com/feed/", "Tech Crunch"],
                 ["http://feeds.bbci.co.uk/news/world/rss.xml","BBC"],
                 ["https://www.npr.org/rss/podcast.php?","NPR"]];
 
+
+const links = [['presentacion', 'Presentación'],
+              ['/', 'Página Principal'],
+			  ['Acercade', 'Acerca de'],
+			  ['Contactenos','Ponte en Contracto']]
+
 const fondo = "darkgrey";
 ---
 
----
 
 
 <html lang="en">
@@ -47,6 +53,7 @@ const fondo = "darkgrey";
 </head>
 <body>
   <main>
+    <Header links{links}/>
     <Navegacion/>
   <h1> Soy... </h1>
     <ul>
@@ -84,6 +91,12 @@ const fondo = "darkgrey";
   <Footer vinculos{vinculos}/>
 </body>
 <style define:vars={{conocimientoColor, tamañoFuente, grosorFuente}}>
+
+  body{
+    margin: 5px ;
+    width: 100%;
+  }
+
   h1{
     color: purple;
     font-size: var(--tamañoFuente);
