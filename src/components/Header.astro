@@ -1,4 +1,6 @@
 ---
+import Hamburguesa from './Hamburguesa.astro';
+
 interface Props {
     links: string[]
 }
@@ -12,6 +14,7 @@ const {links} = Astro.props;
         <a class="nav-link" href={item[0]}> {item[1]} </a>
       ))}
 
+<Hamburguesa/>
 </nav>
 
 <style>
