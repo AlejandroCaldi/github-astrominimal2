@@ -1,0 +1,37 @@
+---
+import Navegacion from '../components/Navegacion.astro'
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+const vinculos=[["https://techcrunch.com/feed/", "Tech Crunch"],
+                ["http://feeds.bbci.co.uk/news/world/rss.xml","BBC"],
+                ["https://www.npr.org/rss/podcast.php?","NPR"]];
+
+const links = [['presentacion', 'Presentación'],
+              ['/', 'Página Principal'],
+			  ['Acercade', 'Acerca de'],
+			  ['Contactenos','Ponte en Contracto']]
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="formato">
+		<Header links{links}/>
+		<h1>Astro</h1>
+		<a href="presentacion"> ir a la presentación</a>
+		<Footer vinculos{vinculos}/>
+	</body>
+</html>
+<style>
+	.formato{
+		width:100%;
+		margin: 0;
+	}
+</style>
